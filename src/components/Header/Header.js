@@ -3,11 +3,6 @@ import './Header.css';
 import {MyConsumer} from '../myContext';
 
 class Header extends Component {
-  // constructor(props){
-    // super(props);
-    // this.state = {};
-  // }
-
   render() {
     return(
     <MyConsumer>

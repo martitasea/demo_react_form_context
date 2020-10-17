@@ -60,10 +60,22 @@ handleChangePrice(event){
               <input type="text" name="address" onChange={this.handleChangeAddress}/><br/>
 
               <label>A que distancia estás:</label><br/>
-              <input type="text" name="dist" onChange={this.handleChangeDist}/><br/>
+              <select name="dist" onChange={this.handleChangeDist}>
+                    <option value="1">1 km</option>
+                    <option value="5">5 km</option>
+                    <option value="10">10 km</option>
+                    <option value="50">50 km</option>
+              </select><br/>
 
               <label>De que rango de precio:</label><br/>
-              <input type="text" name="price" onChange={this.handleChangePrice}/><br/>
+              <input
+                    onChange={this.handleChangePrice}
+                    className="box"
+                    type="range"
+                    name="price"
+                    placeholder="Dime tu ubicación"
+                    min="1"
+                    max="3"/>
 
               <input type="submit" value="enviar"/>
             </form>
