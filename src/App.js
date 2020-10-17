@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Header from "./components/Header/Header";
+import Form from "./components/Form/Form";
+import {MyProvider} from './components/myContext';
 
 function App() {
+
+  const [dish, changeDish]=useState("Que quieres comer:")
+  const [address, changeAddress]=useState("Dónde estás:")
+  const [dist, changeDist]=useState("A que distancia estás:")
+  const [price, changePrice]=useState("De que rango de precio")
+
   return (
+    <MyProvider value={{dish, changeDish, address, changeAddress, dist, changeDist,price, changePrice}}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header/>
+        <Form/>
     </div>
+    </MyProvider>
   );
 }
 
